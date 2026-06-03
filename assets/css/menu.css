@@ -1,0 +1,125 @@
+.name-user-skeleton {
+    margin-bottom: 8px !important;
+    .text-item-skeleton {
+        height: 20px;
+    }
+}
+
+.sidebar-menu-container {
+    .avatar-skeleton {
+        width: 38px;
+        height: 38px;
+        background-color: #e0e0e0;
+        border-radius: 50% !important;
+        margin-bottom: 1.2rem;
+    }
+}
+
+.follow-skeleton {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.follow-skeleton .skeleton-content {
+    display: flex;
+    margin-right: .5rem;
+    .name-skeleton {
+        width: 70% !important;
+        height: 20px;
+    }
+    .counter-skeleton {
+        margin-right: .5rem !important;
+        width: 20% !important;
+        height: 20px;
+    }
+}
+
+.sidebar-skeleton .sidebar-menu-container {
+    display: flex;
+    width: 100%;
+    align-items: start;
+}
+
+.sidebar-skeleton {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.btn-menu-item-skeleton .btn-item-skeleton {
+    height: 48px;
+    border-radius: 25px
+}
+
+.menu-item-skeleton {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-height: 27px;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+.text-item-skeleton {
+    height: 27px;
+    background-color: #e0e0e0;
+    border-radius: 4px !important;
+}
+
+.icon-item-skeleton {
+    width: 36px;
+    height: 36px;
+    background-color: #e0e0e0;
+    border-radius: 50% !important;
+    margin-right: 15px;
+}
+
+.skeleton-divider {
+    height: 1px;
+    width: 100%;
+    margin-bottom: 1rem;
+    border-top: 1px solid #dcdfe6;
+}
+
+@media (max-width: 768px) {
+    .sidebar-skeleton {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .sidebar-skeleton {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .text-item-skeleton, .follow-skeleton, .name-user-skeleton {
+        display: none !important;
+    }
+
+    .icon-item-skeleton {
+        margin-right: 0px;
+    }
+
+    .skeleton-divider,
+    .menu-item-skeleton {
+        justify-content: center;
+    }
+
+    .sidebar-skeleton .sidebar-menu-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-menu-item-skeleton {
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn-menu-item-skeleton .btn-item-skeleton {
+        width: 48px;
+        border-radius: 25px
+    }
+}

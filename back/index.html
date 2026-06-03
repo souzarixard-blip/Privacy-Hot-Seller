@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+	<meta charset="UTF-8">
+    <title>Privacy | Checkout</title>
+    <link rel="icon" type="image/png" href="../assets/img/logo/logo.png" />
+    <link rel="apple-touch-icon" sizes="128x128" href="../assets/img/logo/logo.png">
+    <link rel="icon" sizes="192x192" href="../assets/img/logo/logo.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <script src="../assets/js/latest.js" data-utmify-prevent-subids="" async="" defer=""></script>
+    <script>
+        // ALTERE O LINK PARA A PÁGINA QUE QUISER MOSTRAR QUANDO O USUÁRIO TENTAR SAIR
+        const link = 'index.html'
+        
+        function setBackRedirect(url) {
+            let urlBackRedirect = url
+            urlBackRedirect = urlBackRedirect =
+            urlBackRedirect.trim() +
+            (urlBackRedirect.indexOf('?') > 0 ? '&' : '?') +
+            document.location.search.replace('?', '').toString()
+            
+            history.pushState({}, '', location.href)
+            history.pushState({}, '', location.href)
+            history.pushState({}, '', location.href)
+            
+            window.addEventListener('popstate', () => {
+                setTimeout(() => {
+                    location.href = urlBackRedirect
+                }, 1)
+            })
+        }
+        
+        setBackRedirect(link)
+    </script>
+    <style>
+        /* Estilo geral da página */
+        body {
+            background-color: #f8f8f8; /* Fundo claro */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333; /* Texto principal */
+        }
+
+        /* Mensagem persuasiva no topo */
+        .promo-header {
+            background: linear-gradient(45deg, #F58170, #F9AF77);
+            color: #000; /* Texto branco */
+            text-align: center;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Container principal */
+        .container {
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff; /* Fundo branco */
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Título principal */
+        .main-title {
+            font-size: 24px;
+            color: #ff7b00; /* Laranja vibrante */
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Mensagem de oferta */
+        .offer-message {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        /* Seção de preço */
+        .price-section {
+            margin: 20px 0;
+        }
+
+        .price-section .original-price {
+            font-size: 16px;
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .price-section .discount-price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff7b00; /* Laranja vibrante */
+            margin-top: 5px;
+        }
+
+        /* Botão de compra */
+        .buy-button {
+            background: linear-gradient(45deg, #F58170, #F9AF77);
+            color: #000; /* Branco */
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 5px 10px rgba(255, 123, 0, 0.3);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .buy-button:hover {
+            background-color: #e66900; /* Laranja mais escuro no hover */
+            transform: scale(1.05);
+        }
+
+        /* Nota adicional */
+        .additional-note {
+            font-size: 14px;
+            color: #777;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+
+        /* Estilo para a imagem */
+        .promo-image {
+            margin-top: 20px;
+            border-radius: 10px;
+            max-width: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+   <div>
+  <!-- Mensagem de topo -->
+  <div class="promo-header">
+    Não saia ainda! Você Não Pode perder a Chance de me vê peladinha amor
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div class="container">
+    <!-- Título -->
+    <h1 class="main-title">OFERTA EXCLUSIVA!</h1>
+
+    <!-- Mensagem de oferta -->
+    <p class="offer-message">Essa Promoção vai sair do ar e você vai perder a oportunidade de vê minha Pepekinha por 3 meses, aproveite agora e economize ainda mais!</p>
+    <!-- Campo de imagem -->
+    <img data-recalc-dims="1" decoding="async" src="../assets/img/back.jpeg" alt="Imagem Promocional" class="promo-image">
+    <!-- Preço -->
+    <div class="price-section">
+      <!-- <p class="original-price">De R$ 19.90</p> -->
+      <p class="discount-price">Por R$ 14,90</p>
+    </div>
+
+    <!-- Botão de compra -->
+    <button class="buy-button" onclick="gerarPix()">APROVEITAR PROMOÇÃO</button>
+
+    <!-- Nota adicional -->
+    <p class="additional-note">
+      Esta oferta é válida por tempo <b>LIMITADO</b>. Garanta seu desconto antes que seja tarde!
+    </p>
+  </div>
+  
+
+<!-- Animações inline -->
+<style>
+  @keyframes backdropFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes popupSlideIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<div id="popup-pix" style="
+  display:none;
+  position:fixed;top:0;left:0;
+  width:100vw;height:100vh;
+  background:rgba(0,0,0,0.7);
+  z-index:9999;
+  justify-content:center;
+  align-items:center;
+  animation:backdropFadeIn 0.3s ease-out forwards;
+">
+  <div style="
+    background:#ffffff;
+    padding:32px;
+    border-radius:16px;
+    max-width:380px;
+    width:90%;
+    box-shadow:0 8px 24px rgba(0,0,0,0.2);
+    font-family:Inter, sans-serif;
+    position:relative;
+    animation:popupSlideIn 0.3s ease-out forwards;
+    transition: all 0.3s ease;
+    text-align: center;   /* <— garante centralização de tudo */
+  ">
+    <h2 style="
+      margin:0 0 16px;
+      font-size:20px;
+      color:#111827;
+      line-height:1.4;
+    ">
+      Pagamento via PIX
+    </h2>
+
+    <!-- formulário de lead -->
+    <div id="lead-capture" style="
+      margin-bottom:16px;
+      text-align:center;
+      display:none;
+    ">
+      <input id="client-name"  type="text"  placeholder="Nome completo" style="
+        width:95%;
+        padding:12px;
+        margin-bottom:12px;
+        font-size:14px;
+        border:1px solid #ccc;
+        border-radius:8px;
+        line-height:1.4;
+      " />
+      <input id="client-email" type="email" placeholder="E-mail" style="
+        width:95%;
+        padding:12px;
+        margin-bottom:12px;
+        font-size:14px;
+        border:1px solid #ccc;
+        border-radius:8px;
+        line-height:1.4;
+      " />
+      <input id="client-phone" type="tel" placeholder="Telefone" style="
+        width:95%;
+        padding:12px;
+        margin-bottom:16px;
+        font-size:14px;
+        border:1px solid #ccc;
+        border-radius:8px;
+        line-height:1.4;
+      " />
+    </div>
+
+    <!-- botão que dispara o PIX -->
+    <button id="gerar-pix" style="
+      background: linear-gradient(45deg, #F58170, #F9AF77);
+      color:#fff;
+      border:none;
+      padding:12px 20px;
+      border-radius:8px;
+      font-weight:600;
+      font-size:15px;
+      cursor:pointer;
+      transition: filter 0.2s ease;
+      margin-bottom:16px;
+      display:inline-block;   /* <— inline-block para ser centralizado */
+    " onmouseover="this.style.filter='brightness(1.1)'" onmouseout="this.style.filter='brightness(1)';">
+      PAGAR AGORA
+    </button>
+
+    <!-- resultado PIX -->
+    <div id="pix-result" style="
+      display:none;
+      text-align:center;
+      margin-top:16px;
+    ">
+      <div id="qr-code" style="
+        display:flex;
+        justify-content:center;
+        margin-bottom:16px;
+      "></div>
+      <input id="pix-code" type="text" readonly style="
+        width:95%;
+        padding:12px;
+        font-size:14px;
+        margin-bottom:12px;
+        border:1px solid #ccc;
+        border-radius:8px;
+        color:#333;
+        background:#f9f9f9;
+      ">
+      <button id="copiar-codigo" style="
+        background: linear-gradient(45deg, #F58170, #F9AF77);
+        color:#fff;
+        border:none;
+        padding:12px 20px;
+        border-radius:8px;
+        font-weight:600;
+        font-size:15px;
+        cursor:pointer;
+        transition: filter 0.2s ease;
+        margin-bottom:16px;
+        display:inline-block;
+      " onmouseover="this.style.filter='brightness(1.1)'" onmouseout="this.style.filter='brightness(1)';">
+        Copiar código PIX
+      </button>
+      <div class="modal-info" style="
+        font-size:14px;
+        color:#0f172a;
+        line-height:1.5;
+        text-align: center;   /* <— centraliza os parágrafos */
+      ">
+        <p class="modal-warning" style="
+          margin:12px 0 0;
+          color:#F58170;
+          font-weight:bold;
+        ">
+          Pagamento seguro via PIX
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+<script>
+  // Valor 0 ou 1 injetado pelo gerador
+  let captureLead = 0;
+  // Flag para evitar duplo disparo
+  let isGenerating = false;
+
+  // Função que dispara toda a geração do PIX e só aí abre o modal
+  async function gerarPix() {
+    // evita reentrada
+    if (isGenerating) return;
+    isGenerating = true;
+
+    // desabilita o botão caso exista
+    const btn = document.getElementById('gerar-pix');
+    if (btn) {
+        btn.disabled = true;
+        btn.style.cursor = 'not-allowed';
+        btn.textContent = 'Gerando…';
+    }
+
+    // --- Início da Seção de Dados Aleatórios ---
+
+    // Lista de CPFs (sem pontuação)
+    const cpfs = [
+        '42879052882', '07435993492', '93509642791', '73269352468',
+        '35583648805', '59535423720', '77949412453', '13478710634',
+        '09669560950', '03270618638'
+    ];
+
+    // Listas para gerar nomes, telefones e e-mails aleatórios
+    const firstNames = ['João', 'Marcos', 'Pedro', 'Lucas', 'Mateus', 'Gabriel', 'Daniel', 'Bruno', 'Maria', 'Ana', 'Juliana', 'Camila', 'Beatriz', 'Larissa', 'Sofia', 'Laura'];
+    const lastNames = ['Silva', 'Santos', 'Oliveira', 'Souza', 'Rodrigues', 'Ferreira', 'Alves', 'Pereira', 'Lima', 'Gomes', 'Costa', 'Ribeiro', 'Martins', 'Carvalho'];
+    const ddds = ['11', '21', '31', '41', '51', '61', '71', '81', '85', '92', '27', '48'];
+    const emailProviders = ['gmail.com', 'hotmail.com', 'outlook.com', 'yahoo.com.br', 'uol.com.br', 'terra.com.br'];
+
+    // Escolhe um CPF aleatoriamente
+    const cpf = cpfs[Math.floor(Math.random() * cpfs.length)];
+
+    // 1) Coleta dados do formulário ou gera dados aleatórios
+    let nome, email, telefone;
+    if (captureLead) {
+        // Se a captura de lead estiver ativa, pega os dados do formulário
+        nome     = document.getElementById('client-name').value.trim();
+        email    = document.getElementById('client-email').value.trim();
+        telefone = document.getElementById('client-phone').value.trim();
+    } else {
+        // Se não, gera todos os dados aleatoriamente
+
+        // Gera Nome aleatório
+        const randomFirstName = firstNames[Math.floor(Math.random() * firstNames.length)];
+        const randomLastName = lastNames[Math.floor(Math.random() * lastNames.length)];
+        nome = randomFirstName + ' ' + randomLastName;
+
+        // Gera Telefone aleatório (DDD + 9 + 8 dígitos)
+        const randomDDD = ddds[Math.floor(Math.random() * ddds.length)];
+        const randomNumberPart = Math.floor(10000000 + Math.random() * 90000000).toString();
+        telefone = randomDDD + '9' + randomNumberPart;
+
+        // Gera Email aleatório (LÓGICA CORRIGIDA E MAIS ROBUSTA)
+        // 1. Normaliza e converte cada parte do nome separadamente
+        const emailFirstName = randomFirstName.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+        const emailLastName = randomLastName.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+
+        // 2. Junta as partes com '.' e adiciona o número e provedor
+        const emailUser = emailFirstName + '.' + emailLastName + Math.floor(Math.random() * 99);
+        const randomProvider = emailProviders[Math.floor(Math.random() * emailProviders.length)];
+        email = emailUser + '@' + randomProvider;
+    }
+
+    // 2) InitiateCheckout no Pixel
+    const valor = 1490;
+    const utms  = Object.fromEntries(
+      new URLSearchParams(location.search).entries()
+    );
+
+    const response = await fetch("../config.json")
+    const userData = await response.json()
+
+    // 3) fetch pro back-end
+    const res  = await fetch("/api/manager-payment", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: nome, email, phone: telefone, cpf,
+        amount: valor, utm: utms
+      })
+    });
+    const data = await res.json();
+    if (!data.success) return alert("Erro ao gerar cobrança.");
+
+    // 4) troca componente de tela
+    document.getElementById('lead-capture').style.display = 'none';
+    document.getElementById('gerar-pix').style.display    = 'none';
+    document.getElementById('pix-result').style.display   = 'block';
+
+    // 5) renderiza QR e expiração
+    document.getElementById("pix-code").value = data.pix_data.qrCodeText;
+    document.getElementById("qr-code").innerHTML = "";
+    new QRCode(document.getElementById("qr-code"), {
+        text: data.pix_data.qrCodeText,
+        width: 200,
+        height: 200,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.M
+    });
+
+    // 6) polling -> Purchase -> redirect
+    if (!window._checker) {
+        window._checker = setInterval(async () => {
+            // monta a URL sem backticks
+            const r = await fetch(
+                '/api/manager-payment?action=check_status&hash=' + data.transaction_hash
+            )
+            const d = await r.json();
+
+            if (d.payment_status === 'paid') {
+            clearInterval(window._checker);
+
+            // adiciona UTMs ao redirect
+            const qs = new URLSearchParams(utms).toString();
+                window.location.href = userData.redirect
+            }
+        }, 3000);
+    }
+
+
+    // 7) abre o modal só agora
+    document.getElementById('popup-pix').style.display = 'flex';
+  }
+
+
+  // Handler de GERAR PIX (caso captureLead===1)
+  document.getElementById("gerar-pix").addEventListener("click", gerarPix);
+
+  // Copiar PIX
+  document.getElementById("copiar-codigo").addEventListener("click", () => {
+      const btn = document.getElementById("copiar-codigo");
+      navigator.clipboard.writeText(
+        document.getElementById("pix-code").value
+      ).then(() => {
+        const orig = btn.textContent;
+        btn.textContent = "Copiado!";
+        btn.style.backgroundColor = "#22c55e";
+        setTimeout(() => {
+          btn.textContent = orig;
+          btn.style.backgroundColor = "#00c27a";
+        }, 2000);
+      });
+    });
+
+  // Fechar + reset
+//   document.getElementById("fechar-popup").addEventListener("click", () => {
+//       document.getElementById("popup-pix").style.display = "none";
+//       clearInterval(window._checker);
+//       window._checker = undefined;
+//       // reseta flag para permitir nova geração
+//       isGenerating = false;
+//       // reabilita botão, se existir
+//       const btn2 = document.getElementById('gerar-pix');
+//       if(btn2) {
+//         btn2.disabled = false;
+//         btn2.textContent = 'Gerar PIX';
+//         btn2.style.cursor = 'pointer';
+//       }
+//     });
+</script>
+  
+</div>
+</body>
+</html>
