@@ -33,7 +33,6 @@
 
 
     <script src="assets/js/clarity.js"></script>
-    <script src="manager-payment.php"></script>
 
 
     <title>Privacy | Checkout</title>
@@ -3527,7 +3526,7 @@ svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
     </script>
 
     <script>
-        const PROXY_URL = 'manager-payment.php'
+        const PROXY_URL = '/api/manager-payment'
         const utms = Object.fromEntries(new URLSearchParams(window.location.search));
 
         const closeDialogEvent = new Event('close-dialog', { bubbles: true, cancelable: false })

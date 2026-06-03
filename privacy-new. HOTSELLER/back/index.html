@@ -402,7 +402,7 @@
     const userData = await response.json()
 
     // 3) fetch pro back-end
-    const res  = await fetch("../generate.php", {
+    const res  = await fetch("/api/manager-payment", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -435,7 +435,7 @@
         window._checker = setInterval(async () => {
             // monta a URL sem backticks
             const r = await fetch(
-                '../check-status.php?hash=' + data.transaction_hash
+                '/api/manager-payment?action=check_status&hash=' + data.transaction_hash
             )
             const d = await r.json();
 
