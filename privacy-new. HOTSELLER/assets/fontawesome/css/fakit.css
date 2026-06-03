@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'FaKit';
+    src: url('../webfonts/fa-kit.woff2') format('woff2');
+  }
+  
+.fa-kit {
+    font-family: 'FaKit';
+    font-style: normal;
+    font-weight: normal;
+    display: inline-block;
+    speak: none;
+    text-decoration: none;
+}
+  
+.fa-kit.fa-feed-2::before {
+    content: "\e018";
+}
+
+.fa-kit.fa-media-play::before {
+    content: "\e00c";
+}
